@@ -24,6 +24,7 @@ class Player:
         self.score = 0
         self.their_move = None
         self.my_move_index = -1
+        self.my_move = None
         self.name = None
 
     def move(self):
@@ -32,6 +33,7 @@ class Player:
     def learn(self, my_move, their_move):
         self.their_move = their_move
         self.my_move_index = moves.index(my_move)
+        self.my_move = my_move
 
 
 class RandomPlayer(Player):
@@ -109,6 +111,13 @@ class Game:
 
     def display_results(self):
         clear()
+        result_move = "{} move: {} - {} move: {} \n".format(
+            self.p1.name,
+            self.p1.my_move,
+            self.p2.name,
+            self.p2.my_move
+            )
+        print(result_move) 
         result = "{} {} - {} {} \n".format(
             self.p1.name,
             self.p1.score,
