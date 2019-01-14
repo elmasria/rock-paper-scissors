@@ -117,7 +117,7 @@ class Game:
             self.p2.name,
             self.p2.my_move
             )
-        print(result_move) 
+        print(result_move)
         result = "{} {} - {} {} \n".format(
             self.p1.name,
             self.p1.score,
