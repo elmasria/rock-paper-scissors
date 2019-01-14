@@ -11,3 +11,11 @@ The game has two players. In a single round of the game, each player secretly ch
 
 If both players picked the same move, there is no winner. Otherwise, rock beats scissors; paper beats rock; and scissors beat paper.
 
+## prerequisite 
+
+* Python3
+
+## Setup
+
+* Clone project
+* run ` python3 main.py`
