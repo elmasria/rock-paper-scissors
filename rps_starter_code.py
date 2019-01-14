@@ -73,6 +73,7 @@ class HumanPlayer(Player):
         self.name = "Human Player"
 
     def move(self):
+        print(f"{self.name} Turn: \n")
         valid_user_choice = False
         user_choice = input(QUESTION)
 
@@ -108,13 +109,15 @@ class Game:
 
     def display_results(self):
         clear()
-        result = "{} {} - {} {}".format(
+        result = "{} {} - {} {} \n".format(
             self.p1.name,
             self.p1.score,
             self.p2.score,
             self.p2.name
             )
+        print("======== " * 5 + "\n")
         print(result)
+        print("======== " * 5 + "\n")
 
     def announce_winner(self):
         if self.p1.score == self.p2.score:
@@ -123,10 +126,11 @@ class Game:
             print(f"Winner: {self.p1.name}")
         else:
             print(f"Winner: {self.p2.name}")
+        print("\n")
 
     def play_round(self):
         self.round += 1
-        print(f"Round {self.round}:")
+        print(f"Round {self.round}: \n")
         move1 = self.p1.move()
         move2 = self.p2.move()
         self.check_moves(move1, move2)
@@ -135,7 +139,9 @@ class Game:
         self.display_results()
 
     def play_game(self):
+        clear()
         print("Game start!")
+        print("======== " * 5 + "\n")
         for round in range(3):
             self.play_round()
         self.announce_winner()
